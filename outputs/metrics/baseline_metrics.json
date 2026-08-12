@@ -1,0 +1,18 @@
+{
+  "model": "TF-IDF + Logistic Regression",
+  "max_features": 30000,
+  "validation": {
+    "accuracy": 0.9194961207975306,
+    "macro_precision": 0.9193820585644583,
+    "macro_recall": 0.9194858960405667,
+    "macro_f1": 0.9192973392988235,
+    "weighted_f1": 0.9193080841486387
+  },
+  "test": {
+    "accuracy": 0.9182894736842105,
+    "macro_precision": 0.9180788327260057,
+    "macro_recall": 0.9182894736842104,
+    "macro_f1": 0.9181055969640975,
+    "weighted_f1": 0.9181055969640975
+  }
+}

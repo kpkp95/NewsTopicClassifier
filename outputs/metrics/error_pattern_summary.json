@@ -1,0 +1,21 @@
+{
+  "total_incorrect_predictions": 462,
+  "most_common_confusions": {
+    "Business -> Sci/Tech": 140,
+    "Sci/Tech -> Business": 110,
+    "World -> Business": 56,
+    "Sci/Tech -> World": 35,
+    "World -> Sci/Tech": 35,
+    "Business -> World": 33,
+    "World -> Sports": 14,
+    "Sports -> Business": 14
+  },
+  "average_error_confidence": 0.8017,
+  "high_confidence_errors_at_least_0_80": 261,
+  "high_confidence_error_percentage": 56.49,
+  "business_sci_tech_errors": 250,
+  "business_sci_tech_error_percentage": 54.11,
+  "average_words_in_errors": 35.93,
+  "average_words_in_all_test_examples": 37.55,
+  "selected_error_method": "Proportional confusion-pair sample with confidence-range coverage"
+}

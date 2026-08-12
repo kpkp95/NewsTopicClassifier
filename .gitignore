@@ -1,0 +1,38 @@
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Notebook and editor files
+.ipynb_checkpoints/
+.idea/
+.vscode/
+.DS_Store
+
+# Local Python environments
+.venv/
+venv/
+env/
+
+# Download caches and optional local data copies
+.cache/
+data/
+
+# Secrets and local cloud configuration
+.env
+.env.*
+gcloud-config/
+
+# Logs and temporary archives
+*.log
+*.tmp
+*.zip
+
+# Keep the demonstration recording outside Git
+*.mp4
+*.mov
+*.mkv
+VIDEO_DEMO.md
+videoDemo.md

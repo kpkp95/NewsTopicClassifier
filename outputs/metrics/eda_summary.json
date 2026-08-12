@@ -1,0 +1,114 @@
+{
+  "train_rows": 120000,
+  "test_rows": 7600,
+  "number_of_classes": 4,
+  "class_distribution": {
+    "World": 30000,
+    "Sports": 30000,
+    "Business": 30000,
+    "Sci/Tech": 30000
+  },
+  "missing_train_texts": 0,
+  "missing_test_texts": 0,
+  "duplicate_train_texts": 137,
+  "duplicate_test_texts": 0,
+  "exact_train_test_overlap": 13,
+  "average_words": 37.68,
+  "median_words": 37.0,
+  "average_characters": 233.3,
+  "average_tokens": 51.54,
+  "median_tokens": 49.0,
+  "token_length_percentiles": {
+    "90th": 67,
+    "95th": 78,
+    "99th": 116,
+    "maximum": 327
+  },
+  "token_coverage_at_128_percent": 99.441,
+  "examples_truncated_at_128": 671,
+  "total_word_occurrences": 4281909,
+  "unique_words": 81398,
+  "top_content_words": [
+    [
+      "new",
+      21338
+    ],
+    [
+      "said",
+      20264
+    ],
+    [
+      "reuters",
+      19340
+    ],
+    [
+      "ap",
+      16228
+    ],
+    [
+      "monday",
+      7521
+    ],
+    [
+      "wednesday",
+      7402
+    ],
+    [
+      "tuesday",
+      7326
+    ],
+    [
+      "oil",
+      7235
+    ],
+    [
+      "thursday",
+      7217
+    ],
+    [
+      "friday",
+      6723
+    ],
+    [
+      "company",
+      6436
+    ],
+    [
+      "year",
+      6350
+    ],
+    [
+      "york",
+      6107
+    ],
+    [
+      "world",
+      6022
+    ],
+    [
+      "yesterday",
+      5927
+    ],
+    [
+      "president",
+      5792
+    ],
+    [
+      "million",
+      5679
+    ],
+    [
+      "iraq",
+      5553
+    ],
+    [
+      "says",
+      5344
+    ],
+    [
+      "corp",
+      5144
+    ]
+  ],
+  "raw_html_artifacts_repaired": 62172
+}

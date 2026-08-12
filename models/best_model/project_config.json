@@ -1,0 +1,20 @@
+{
+  "label_names": [
+    "World",
+    "Sports",
+    "Business",
+    "Sci/Tech"
+  ],
+  "number_of_labels": 4,
+  "dropout": 0.3,
+  "max_length": 128,
+  "base_model": "distilbert-base-uncased",
+  "best_epoch": 1,
+  "best_validation_loss": 0.19128296404229025,
+  "best_validation_accuracy": 0.939267539834821,
+  "best_validation_macro_f1": 0.9393522226274527,
+  "epochs_requested": 3,
+  "learning_rate": 2e-05,
+  "batch_size": 16,
+  "checkpoint_selection": "lowest validation loss"
+}
