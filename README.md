@@ -174,6 +174,21 @@ python app.py
 Open `http://127.0.0.1:7860`. The application displays the predicted category,
 confidence score, and probabilities for all four classes.
 
+
+### Optional Cloud Run deployment
+
+As an optional extension beyond the course requirements, the saved-model
+inference application was packaged with Docker and deployed to Google Cloud
+Run:
+
+**[Open the live AG News classifier](https://ag-news-classifier-1073327201803.northamerica-northeast2.run.app/)**
+
+The deployment uses the same saved checkpoint as the local application and
+does not retrain the model. It may take a short time to respond to the first
+request after inactivity because the service scales down to zero when unused.
+The hosted link is provided for demonstration and experimentation and may be
+disabled after project assessment.
+
 ### Complete pipeline
 
 ```powershell
@@ -395,8 +410,10 @@ tokenization, model inference, and softmax conversion without retraining.
 
 ### Inference examples
 
-The first four examples are clear representatives of the four classes. The
-final three mix vocabulary from multiple topics.
+The first four examples are clear representatives of the four classes.
+Predictions 5 through 7 mix vocabulary from multiple topics, while Predictions
+8 and 9 demonstrate what happens when the input belongs to a topic that is not
+part of the four-class label set.
 
 #### Prediction 1: World
 
@@ -467,6 +484,52 @@ The model predicted **Business with 96.4% confidence**, while World received
 approximately 3%. Financial consequences became the strongest classification
 signal.
 
+
+## Out-of-scope text
+
+This project uses **closed-set classification**. The model assumes that every
+input belongs to one of the four available categories: World, Sports, Business,
+or Sci/Tech. It does not contain Entertainment, Food/Lifestyle, `Other`, or
+`Unknown` labels.
+
+For every input, softmax distributes 100% probability among the four available
+classes. Therefore, an unrelated article will still be assigned to whichever
+available category appears most similar. A high confidence score does not
+guarantee that the input belongs to the supported label set.
+
+| Missing topic | Example text |
+|---|---|
+| Entertainment | A popular actor released a new comedy film and attended its premiere with other cast members. |
+| Food/Lifestyle | A local chef demonstrated how to bake chocolate cake and shared several recipes for beginners. |
+
+### Prediction 8: Entertainment article
+
+**Input:** A popular actor released a new comedy film and attended its premiere
+with other cast members.
+
+![Out-of-scope entertainment prediction](outputs/screenshots/prediction8.png)
+
+The model predicted **World with 74% confidence**. The other probabilities were
+Business 12%, Sci/Tech 11%, and Sports 3%. This is not a correct World
+classification; it is the closest choice available to a model that has no
+Entertainment class.
+
+### Prediction 9: Food and lifestyle article
+
+**Input:** A local chef demonstrated how to bake chocolate cake and shared
+several recipes for beginners.
+
+![Out-of-scope food and lifestyle prediction](outputs/screenshots/prediction9.png)
+
+The model predicted **Sci/Tech with 47% confidence**. Business received 36%,
+World 17%, and Sports approximately 0%. The lower confidence and divided
+probabilities show that the input does not closely match one supported class,
+but the model must still return one of the four labels.
+
+These predictions should not be treated as valid topic assignments. Possible
+future improvements include adding an `Other` class, applying a carefully
+validated uncertainty threshold, or using out-of-distribution detection.
+
 ## Overall model conclusion
 
 The DistilBERT model performed well, correctly classifying approximately 94 out
@@ -524,3 +587,4 @@ or a shareable link, depending on the instructor's instructions.
    https://huggingface.co/datasets/fancyzhx/ag_news.
 5. Hugging Face, “DistilBERT documentation,”
    https://huggingface.co/docs/transformers/model_doc/distilbert.
+
